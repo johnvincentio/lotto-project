@@ -10,9 +10,17 @@ class Lottery extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			balls: [ ...Array(this.props.numBalls).keys() ]
-				.map(() => Math.floor(Math.random() * this.props.maxNum))
+			balls: this.generateBalls()
 		};
+	}
+
+	generateBalls = () => {
+		return  [ ...Array(this.props.numBalls).keys() ]
+			.map(() => Math.floor(Math.random() * this.props.maxNum));
+	}
+
+	generate = () => {
+		this.setState({ balls: this.generateBalls() });
 	}
 
 	render() {
@@ -26,7 +34,7 @@ class Lottery extends React.Component {
 					{this.state.balls.map((ball, id) => <div key={id} className="lottery--ball">{ball}</div>)}
 				</div>
 				<div>
-					<button type="button" className="lottery--button">
+					<button type="button" className="lottery--button" onClick={this.generate}>
 					Generate
 					</button>
 				</div>

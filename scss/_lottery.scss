@@ -7,7 +7,7 @@ $ball-color: salmon;
 
 .lottery {
 	margin: 20px auto;
-	border: 1px solid #857d7d;
+	border: 1px solid #b3aaaa;
 	border-radius: 3px;
 	max-width: 600px;
 
@@ -28,7 +28,7 @@ $ball-color: salmon;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
+
 		background-color: $ball-color;
 		color: white;
 		width: 40px;
